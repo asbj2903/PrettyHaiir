@@ -7,24 +7,25 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer
 {
-	class Program
+	public class Program
 	{
 		static void Main(string[] args)
 		{
+            
+            // STUB TEST KODE 
+            Customer test = new Customer();
 
-			// STUB TEST KODE 
-			Customer test = new Customer();
-
-			test.CustomerID = 42;
+			test.CustomerID = 41;
 			test.Customer_Name = "TestNavn";
 			test.Address = "TestAdresse";
 			test.Zip = 5000;
 			test.Town = "odense";
 			test.PhoneNumber = 23232323;
 
-			DatabaseController databaseController = new DatabaseController();
+            DatabaseController databaseController = new DatabaseController();
 
-			databaseController.OPRET_KUNDE(test);
+            databaseController.OPRET_KUNDE(test);
+            
 		}
 	}
 }

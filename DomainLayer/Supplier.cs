@@ -12,35 +12,35 @@ namespace DomainLayer
 		public string Name
 		{
 			get { return name; }
-			set { value = name; }
+			set { name = value; }
 		}
 
 		private string address;
 		public string Address
 		{
 			get { return address; }
-			set { value = address; }
+			set { address = value; }
 		}
 
 		private int zip;
 		public int Zip
 		{
 			get { return zip; }
-			set { value = zip; }
+			set { zip = value; }
 		}
 
 		private string town;
 		public string Town
 		{
 			get { return town; }
-			set { value = town; }
+			set { town = value; }
 		}
 
 		private int phoneNumber;
 		public int PhoneNumber
 		{
 			get { return phoneNumber; }
-			set { value = phoneNumber; }
+			set { phoneNumber = value; }
 		}
 	}
 }

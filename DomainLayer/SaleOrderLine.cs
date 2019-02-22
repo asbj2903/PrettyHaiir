@@ -12,14 +12,14 @@ namespace DomainLayer
 		public int Quantity
 		{
 			get { return quantity; }
-			set { value = quantity; }
+			set { quantity = value; }
 		}
 
 		private double price;
 		public double Price
 		{
 			get { return price; }
-			set { value = price; }
+			set { price = value; }
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace DomainLayer
 		public DateTime Orderdate
 		{
 			get { return orderDate; }
-			set { value = orderDate; }
+			set { orderDate = value; }
 		}
 
 		private DateTime deliveryDate;
@@ -20,7 +20,7 @@ namespace DomainLayer
 		public DateTime DeliveryDate
 		{
 			get { return deliveryDate; }
-			set { value = deliveryDate; }
+			set { deliveryDate = value; }
 		}
 
 		private bool picked;
@@ -28,7 +28,7 @@ namespace DomainLayer
 		public bool Picked
 		{
 			get { return picked; }
-			set { value = picked; }
+			set {  picked = value; }
 		}
 
 	}
