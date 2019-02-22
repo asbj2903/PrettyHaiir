@@ -17,7 +17,7 @@ namespace DomainLayer
 			}
 			set
 			{
-				value = name;
+				name = value;
 			}
 		}
 
@@ -30,7 +30,7 @@ namespace DomainLayer
 			}
 			set
 			{
-				value = manufacturer;
+                manufacturer = value;
 			}
 		}
 
@@ -43,7 +43,7 @@ namespace DomainLayer
 			}
 			set
 			{
-				value = desciption;
+				 desciption=value ;
 			}
 		}
 
@@ -56,7 +56,7 @@ namespace DomainLayer
 			}
 			set
 			{
-				value = price;
+				 price = value;
 			}
 		}
 
@@ -69,7 +69,7 @@ namespace DomainLayer
 			}
 			set
 			{
-				value = minStock;
+                minStock= value;
 			}
 
 		}
@@ -78,7 +78,7 @@ namespace DomainLayer
 		public int Quantity
 		{
 			get { return quantity; }
-			set { value = quantity; }
+			set { quantity = value; }
 		}
 	}
 }

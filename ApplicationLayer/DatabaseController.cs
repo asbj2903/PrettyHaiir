@@ -26,7 +26,7 @@ namespace ApplicationLayer
 					cmd1.CommandType = CommandType.StoredProcedure;
 
 					cmd1.Parameters.Add(new SqlParameter("@CustomerID", customer.CustomerID));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Name", customer.Customer_Name));
+					cmd1.Parameters.Add(new SqlParameter("Customer_Name", customer.Customer_Name));
 					cmd1.Parameters.Add(new SqlParameter("@Customer_Address", customer.Address));
 					cmd1.Parameters.Add(new SqlParameter("@Customer_Zip", customer.Zip));
 					cmd1.Parameters.Add(new SqlParameter("@CustomerTown", customer.Town));
@@ -36,8 +36,9 @@ namespace ApplicationLayer
 				}
 				catch (SqlException e)
 				{
-					Console.WriteLine("OPRET_KUNDE FEJL" + e.Message);
+					Console.WriteLine("OPRET_KUNDE FEJL" +" " + e.Message);
 				}
+                
 			}
 		}
 	}
