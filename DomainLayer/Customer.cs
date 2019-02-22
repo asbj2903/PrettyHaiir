@@ -12,7 +12,7 @@ namespace DomainLayer
 		public int CustomerID
 		{
 			get { return customerID; }
-			set { value = customerID; }
+			set { customerID = value; }
 		}
 
 
