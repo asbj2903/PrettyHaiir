@@ -16,11 +16,11 @@ namespace DomainLayer
 		}
 
 
-		private string name;
-		public string Name
+		private string customer_Name;
+		public string Customer_Name
 		{
-			get { return name; }
-			set { value = name; }
+			get { return customer_Name; }
+			set { value = customer_Name; }
 		}
 
 		private string address;

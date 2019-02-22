@@ -8,7 +8,7 @@ namespace ApplicationLayer
 {
 	public class StockAdjustment
 	{
-		public void AdjustStock(Product)
+		public void AdjustStock()
 		{
 
 		}

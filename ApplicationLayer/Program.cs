@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,20 @@ namespace ApplicationLayer
 	{
 		static void Main(string[] args)
 		{
+
+			// STUB TEST KODE 
+			Customer test = new Customer();
+
+			test.CustomerID = 42;
+			test.Customer_Name = "TestNavn";
+			test.Address = "TestAdresse";
+			test.Zip = 5000;
+			test.Town = "odense";
+			test.PhoneNumber = 23232323;
+
+			DatabaseController databaseController = new DatabaseController();
+
+			databaseController.OPRET_KUNDE(test);
 		}
 	}
 }
