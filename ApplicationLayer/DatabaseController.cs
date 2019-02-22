@@ -14,7 +14,7 @@ namespace ApplicationLayer
 	{
 		private static readonly string conntectionString =
 		  "Server = ealSQL1.eal.local; Database = A_DB06_2018; User Id = A_STUDENT06; Password = A_OPENDB06;";
-        //fdf 
+        
 		public void OPRET_KUNDE(Customer customer)
 		{
 			using (System.Data.SqlClient.SqlConnection con = new SqlConnection(conntectionString))
