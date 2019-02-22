@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DomainLayer;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +16,7 @@ namespace ApplicationLayer
 
 		public void OPRET_KUNDE(Customer customer)
 		{
-			using (SqlConnection con = new SqlConnection(conntectionString))
+			using (System.Data.SqlClient.SqlConnection con = new SqlConnection(conntectionString))
 			{
 				try
 				{
@@ -23,7 +26,7 @@ namespace ApplicationLayer
 					cmd1.CommandType = CommandType.StoredProcedure;
 
 					cmd1.Parameters.Add(new SqlParameter("@CustomerID", customer.CustomerID));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Name", customer.Name));
+					cmd1.Parameters.Add(new SqlParameter("@Customer_Name", customer.Customer_Name));
 					cmd1.Parameters.Add(new SqlParameter("@Customer_Address", customer.Address));
 					cmd1.Parameters.Add(new SqlParameter("@Customer_Zip", customer.Zip));
 					cmd1.Parameters.Add(new SqlParameter("@CustomerTown", customer.Town));
@@ -37,11 +40,7 @@ namespace ApplicationLayer
 				}
 			}
 		}
-		public Customer GetCustomer()
-		{
-			Customer CustomerTest = new Customer();
-
-			return CustomerTest;
-		}
 	}
 }
+		
+
