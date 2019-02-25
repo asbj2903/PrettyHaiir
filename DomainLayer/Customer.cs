@@ -23,34 +23,34 @@ namespace DomainLayer
 			set { customer_Name = value; }
 		}
 
-		private string address;
-		public string Address
+		private string customer_Address;
+		public string Customer_Address
 		{
-			get { return address; }
-			set {address = value; }
+			get { return customer_Address; }
+			set {customer_Address = value; }
 		}
 
-		private int zip;
-		public int Zip
+		private int customer_Zip;
+		public int Customer_Zip
 		{
-			get { return zip; }
-			set { zip = value; }
+			get { return customer_Zip; }
+			set { customer_Zip = value; }
 		}
 
-		private string town;
-		public string Town
+		private string customer_Town;
+		public string Customer_Town
 		{
-			get { return town; }
-			set { town = value; }
+			get { return customer_Town; }
+			set { customer_Town = value; }
 		}
 
-		private int phoneNumber;
+		private int customer_PhoneNumber;
 
 
-		public int PhoneNumber
-		{
-			get { return phoneNumber; }
-			set { phoneNumber = value; }
+		public int Customer_PhoneNumber
+        {
+			get { return customer_PhoneNumber; }
+			set { customer_PhoneNumber = value; }
 		}
 	}
 }

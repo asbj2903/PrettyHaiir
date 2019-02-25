@@ -27,10 +27,10 @@ namespace ApplicationLayer
 
 					cmd1.Parameters.Add(new SqlParameter("@CustomerID", customer.CustomerID));
 					cmd1.Parameters.Add(new SqlParameter("Customer_Name", customer.Customer_Name));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Address", customer.Address));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Zip", customer.Zip));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Town", customer.Town));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Telephone", customer.PhoneNumber));
+					cmd1.Parameters.Add(new SqlParameter("@Customer_Address", customer.Customer_Address));
+					cmd1.Parameters.Add(new SqlParameter("@Customer_Zip", customer.Customer_Zip));
+					cmd1.Parameters.Add(new SqlParameter("@Customer_Town", customer.Customer_Town));
+					cmd1.Parameters.Add(new SqlParameter("@Customer_Telephone", customer.Customer_PhoneNumber));
 
 					cmd1.ExecuteNonQuery();
 				}

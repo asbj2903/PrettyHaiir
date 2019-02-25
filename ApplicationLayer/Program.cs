@@ -17,10 +17,10 @@ namespace ApplicationLayer
 
 			test.CustomerID = 41;
 			test.Customer_Name = "TestNavn";
-			test.Address = "TestAdresse";
-			test.Zip = 5000;
-			test.Town = "odense";
-			test.PhoneNumber = 23232323;
+			test.Customer_Address = "TestAdresse";
+			test.Customer_Zip = 5000;
+			test.Customer_Town = "odense";
+			test.Customer_PhoneNumber = 23232323;
 
             DatabaseController databaseController = new DatabaseController();
 
