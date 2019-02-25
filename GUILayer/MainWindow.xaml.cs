@@ -16,7 +16,6 @@ using ApplicationLayer;
 using DomainLayer;
 
 
-
 namespace GUILayer
 {
 	
