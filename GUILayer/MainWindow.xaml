@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="Button_FindCustomer" Content="Find Kunde" HorizontalAlignment="Left" Margin="392,193,0,0" VerticalAlignment="Top" Width="74" Click="Button_FindCustomer_Click" RenderTransformOrigin="0.851,0.425"/>
+        <Button x:Name="Button_OpretKunde" Content="Opret Kunde" HorizontalAlignment="Left" Margin="37,188,0,0" VerticalAlignment="Top" Width="74" Click="Button_OpretKunde_Click"/>
+        <Label x:Name="Label_CustomerName" Content="Indsæt navn" HorizontalAlignment="Left" Margin="36,226,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_CustomerAddress" Content="Indsæt Addresse" HorizontalAlignment="Left" Margin="37,257,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_CustomerZip" Content="Indsæt Post nr." HorizontalAlignment="Left" Margin="37,288,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_CustomerTown" Content="Indsæt By" HorizontalAlignment="Left" Margin="37,319,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_CustomerTelephone" Content="Indsæt Telefon" HorizontalAlignment="Left" Margin="37,350,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="Txt_CustomerName" HorizontalAlignment="Left" Height="23" Margin="176,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="Txt_CustomerName_TextChanged"/>
+        <TextBox x:Name="Txt_CustomerAddress" HorizontalAlignment="Left" Height="24" Margin="176,261,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="Txt_CustomerAddress_TextChanged"/>
+        <TextBox x:Name="Txt_CustomerZip" HorizontalAlignment="Left" Height="23" Margin="176,290,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="Txt_CustomerZip_TextChanged"/>
+        <TextBox x:Name="Txt_CustomerTown" HorizontalAlignment="Left" Height="23" Margin="176,319,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="Txt_CustomerTown_TextChanged"/>
+        <TextBox x:Name="Txt_CustomerTelefon" HorizontalAlignment="Left" Height="23" Margin="176,350,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Txt_FindCustomer" HorizontalAlignment="Left" Height="23" Margin="392,244,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.233,0.761"/>
+        <Label x:Name="Label_CustomerID" Content="Indsæt CustomerID" HorizontalAlignment="Left" Margin="392,218,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Button_DeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="501,193,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button x:Name="Button_Clear" Content="Clear" HorizontalAlignment="Left" Margin="176,188,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.52,0" Click="Button_Clear_Click"/>
     </Grid>
 </Window>
