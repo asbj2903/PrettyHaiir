@@ -14,17 +14,20 @@ namespace ApplicationLayer
 
 			// STUB TEST KODE 
 			Customer test = new Customer();
-
-			test.CustomerID = 42;
+            int CustomerID = test.CustomerID;
+                       
+             /*
 			test.Customer_Name = "TestNavn";
 			test.Address = "TestAdresse";
 			test.Zip = 5000;
 			test.Town = "odense";
 			test.PhoneNumber = 23232323;
-
+            */
 			DatabaseController databaseController = new DatabaseController();
 
-			databaseController.OPRET_KUNDE(test);
+			databaseController.FineCustomerByCustomerID();
+            Console.ReadLine();
+
 		}
 	}
 }
