@@ -42,6 +42,56 @@ namespace ApplicationLayer
                 
 			}
 		}
+
+         public void FineCustomerByCustomerID()
+        {
+            using (SqlConnection con = new SqlConnection(conntectionString))
+            {
+                try
+                {
+                    Console.WriteLine("Indtast CustomerID: ");
+                    string CustomerIDString = Console.ReadLine();
+                    int CustomerID = Convert.ToInt32(CustomerIDString);
+
+
+                    con.Open();
+
+                    SqlCommand cmd2 = new SqlCommand("GetCustomerByCustomerID", con);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+                    cmd2.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
+
+
+                    SqlDataReader reader = cmd2.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            string Customer_ID = reader["CustomerID"].ToString();
+                            string Customer_Name = reader["Customer_Name"].ToString();
+                            string Customer_Adress = reader["Customer_Address"].ToString();
+                            string customer_Zip = reader["Customer_Zip"].ToString();
+                            string Customer_Town = reader["Customer_Town"].ToString();
+                            string Customer_Telephone = reader["Customer_Telephone"].ToString();
+
+                            Console.WriteLine(Customer_ID + " " + Customer_Name + " " + Customer_Adress + " " + customer_Zip + " "+ Customer_Town + " " + Customer_Telephone);
+                            Console.ReadLine();
+                        }
+                    }
+                }
+                catch (SqlException e)
+                
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                    Console.ReadLine();
+                }
+
+            
+            }
+
+        }
+
 	}
 }
 		
