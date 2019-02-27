@@ -12,12 +12,12 @@ namespace ApplicationLayer
 {
 	public class DatabaseController
 	{
-		private static readonly string conntectionString =
+		private static readonly string connectionString =
 		  "Server = ealSQL1.eal.local; Database = A_DB06_2018; User Id = A_STUDENT06; Password = A_OPENDB06;";
         
 		public void OPRET_KUNDE(Customer customer)
 		{
-			using (System.Data.SqlClient.SqlConnection con = new SqlConnection(conntectionString))
+			using (System.Data.SqlClient.SqlConnection con = new SqlConnection(connectionString))
 			{
 				try
 				{
@@ -30,8 +30,8 @@ namespace ApplicationLayer
 					cmd1.Parameters.Add(new SqlParameter("Customer_Name", customer.Customer_Name));
 					cmd1.Parameters.Add(new SqlParameter("@Customer_Address", customer.Customer_Address));
 					cmd1.Parameters.Add(new SqlParameter("@Customer_Zip", customer.Customer_Zip));
-					cmd1.Parameters.Add(new SqlParameter("@CustomerTown", customer.Customer_Town));
-					cmd1.Parameters.Add(new SqlParameter("@CustomerTelephone", customer.Customer_PhoneNumber));
+					cmd1.Parameters.Add(new SqlParameter("@Customer_Town", customer.Customer_Town));
+					cmd1.Parameters.Add(new SqlParameter("@Customer_Telephone", customer.Customer_PhoneNumber));
 
 					cmd1.ExecuteNonQuery();
 				}
@@ -43,9 +43,9 @@ namespace ApplicationLayer
 			}
 		}
 
-         public void FineCustomerByCustomerID()
+         public void FindCustomerByCustomerID()
         {
-            using (SqlConnection con = new SqlConnection(conntectionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
                 {

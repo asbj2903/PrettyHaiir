@@ -21,12 +21,13 @@ namespace GUILayer
 	
 	public partial class MainWindow : Window
 	{
-		public MainWindow()
+        Controller controller = new Controller();
+        public MainWindow()
 		{
 			InitializeComponent();
 		}
 
-        Controller controller = new Controller();
+        
         private void Button_FindCustomer_Click(object sender, RoutedEventArgs e)
         {
 
@@ -34,32 +35,25 @@ namespace GUILayer
 
         private void Button_OpretKunde_Click(object sender, RoutedEventArgs e)
         {
-            CustomerRepository customerRepository = new CustomerRepository();
+            //CustomerRepository customerRepository = new CustomerRepository();
 
-            string ct_name = Txt_CustomerName.Text;
-            string ct_address = Txt_CustomerAddress.Text;
-            int ct_zip = Convert.ToInt32(Txt_CustomerZip.Text);
-            string ct_Town = Txt_CustomerTown.Text;
-            int ct_Telephone = Convert.ToInt32(Txt_CustomerTelefon.Text);
+            //int ct_id = Convert.ToInt32(Txt_CustomerID.Text);
+            //string ct_name = Txt_CustomerName.Text;
+            //string ct_address = Txt_CustomerAddress.Text;
+            //int ct_zip = Convert.ToInt32(Txt_CustomerZip.Text);
+            //string ct_Town = Txt_CustomerTown.Text;
+            //int ct_Telephone = Convert.ToInt32(Txt_CustomerTelefon.Text);
 
-            customerRepository.AddCustomer(ct_name,ct_address,ct_zip,ct_Town,ct_Telephone);
+            //customerRepository.AddCustomer(ct_id,ct_name,ct_address,ct_zip,ct_Town,ct_Telephone);
 
-            DatabaseController DBC = new DatabaseController();
-
-            DBC.OPRET_KUNDE(customerRepository.AddCustomer(ct_name, ct_address, ct_zip, ct_Town, ct_Telephone));
-
-            for (int i = 0; i < 100; i++)
-            {
-                
-            }
+            controller.CreateCustomer(Convert.ToInt32(Txt_CustomerID.Text), Txt_CustomerName.Text, Txt_CustomerAddress.Text, Convert.ToInt32(Txt_CustomerZip.Text), Txt_CustomerTown.Text, Convert.ToInt32(Txt_CustomerTelefon.Text));
+            
 
         }
 
         private void Txt_CustomerName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
-            
-            
+
         }
 
         private void Button_Clear_Click(object sender, RoutedEventArgs e)
@@ -69,8 +63,7 @@ namespace GUILayer
 
         private void Txt_CustomerAddress_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
-            
+
         }
 
         private void Txt_CustomerZip_TextChanged(object sender, TextChangedEventArgs e)
@@ -87,5 +80,11 @@ namespace GUILayer
         {
             //Txt_CustomerTelefon.IsEnabled = false;
         }
+
+        private void Txt_CustomerID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }

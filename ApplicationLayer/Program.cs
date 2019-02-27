@@ -25,7 +25,7 @@ namespace ApplicationLayer
             */
 			DatabaseController databaseController = new DatabaseController();
 
-			databaseController.FineCustomerByCustomerID();
+			databaseController.FindCustomerByCustomerID();
             Console.ReadLine();
 
 		}

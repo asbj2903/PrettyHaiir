@@ -11,8 +11,9 @@ namespace ApplicationLayer
 	{
         Customer customer = new Customer();
 
-        public Customer AddCustomer(string CustomerName, string CustomerAddress, int CustomerZip, string CustomerTown, int CustomerTelephone)
+        public Customer AddCustomer(int CustomerID, string CustomerName, string CustomerAddress, int CustomerZip, string CustomerTown, int CustomerTelephone)
 		{
+            customer.CustomerID = CustomerID;
             customer.Customer_Name = CustomerName;
             customer.Customer_Address = CustomerAddress;
             customer.Customer_Zip = CustomerZip;
