@@ -11,14 +11,24 @@ namespace ApplicationLayer
 	{
         DatabaseController databaseController = new DatabaseController();
 
-        public void CreateCustomer(int customerID, string customer_Name, string customer_Address, int customer_Zip, string customer_Town, int customer_Telephone)
+        public void CreateCustomer(string customer_Name, string customer_Address, int customer_Zip, string customer_Town, int customer_Telephone)
         {
             
-            Customer customer = new Customer { CustomerID = customerID, Customer_Name = customer_Name, Customer_Address = customer_Address, Customer_Zip = customer_Zip, Customer_Town = customer_Town, Customer_PhoneNumber = customer_Telephone };
+            Customer customer = new Customer {Customer_Name = customer_Name, Customer_Address = customer_Address, Customer_Zip = customer_Zip, Customer_Town = customer_Town, Customer_PhoneNumber = customer_Telephone };
 
 
             databaseController.OPRET_KUNDE(customer);
 
         }
+
+        public string GetCustomer(int customerID)
+        {
+            Customer customer = new Customer { CustomerID = customerID };
+
+            return databaseController.FindCustomerByCustomerID(customerID);
+
+            
+        }
 	}
+
 }

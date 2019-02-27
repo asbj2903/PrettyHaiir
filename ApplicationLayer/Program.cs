@@ -12,21 +12,7 @@ namespace ApplicationLayer
 		static void Main(string[] args)
 		{
 
-			// STUB TEST KODE 
-			Customer test = new Customer();
-            int CustomerID = test.CustomerID;
-                       
-             /*
-			test.Customer_Name = "TestNavn";
-			test.Address = "TestAdresse";
-			test.Zip = 5000;
-			test.Town = "odense";
-			test.PhoneNumber = 23232323;
-            */
-			DatabaseController databaseController = new DatabaseController();
-
-			databaseController.FindCustomerByCustomerID();
-            Console.ReadLine();
+			
 
 		}
 	}

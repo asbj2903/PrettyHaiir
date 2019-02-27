@@ -30,6 +30,7 @@ namespace GUILayer
         
         private void Button_FindCustomer_Click(object sender, RoutedEventArgs e)
         {
+            ViewCustomerBox.Text = controller.GetCustomer(int.Parse(Txt_FindCustomer.Text));
 
         }
 
@@ -46,8 +47,13 @@ namespace GUILayer
 
             //customerRepository.AddCustomer(ct_id,ct_name,ct_address,ct_zip,ct_Town,ct_Telephone);
 
-            controller.CreateCustomer(Convert.ToInt32(Txt_CustomerID.Text), Txt_CustomerName.Text, Txt_CustomerAddress.Text, Convert.ToInt32(Txt_CustomerZip.Text), Txt_CustomerTown.Text, Convert.ToInt32(Txt_CustomerTelefon.Text));
-            
+            controller.CreateCustomer(Txt_CustomerName.Text, Txt_CustomerAddress.Text, Convert.ToInt32(Txt_CustomerZip.Text), Txt_CustomerTown.Text, Convert.ToInt32(Txt_CustomerTelefon.Text));
+
+            Txt_CustomerName.Text = null;
+            Txt_CustomerAddress.Text = null;
+            Txt_CustomerZip.Text = null;
+            Txt_CustomerTown.Text = null;
+            Txt_CustomerTelefon.Text = null;
 
         }
 

@@ -6,13 +6,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DomainLayer;
 
 namespace ApplicationLayer
 {
 	public class DatabaseController
 	{
-		private static readonly string connectionString =
+        private string customerString;
+        private static readonly string connectionString =
 		  "Server = ealSQL1.eal.local; Database = A_DB06_2018; User Id = A_STUDENT06; Password = A_OPENDB06;";
         
 		public void OPRET_KUNDE(Customer customer)
@@ -26,7 +26,7 @@ namespace ApplicationLayer
 					SqlCommand cmd1 = new SqlCommand("OPRET_KUNDE", con);
 					cmd1.CommandType = CommandType.StoredProcedure;
 
-					cmd1.Parameters.Add(new SqlParameter("@CustomerID", customer.CustomerID));
+					
 					cmd1.Parameters.Add(new SqlParameter("Customer_Name", customer.Customer_Name));
 					cmd1.Parameters.Add(new SqlParameter("@Customer_Address", customer.Customer_Address));
 					cmd1.Parameters.Add(new SqlParameter("@Customer_Zip", customer.Customer_Zip));
@@ -43,22 +43,22 @@ namespace ApplicationLayer
 			}
 		}
 
-         public void FindCustomerByCustomerID()
-        {
+         public string FindCustomerByCustomerID(int customerID)
+         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
                 {
-                    Console.WriteLine("Indtast CustomerID: ");
-                    string CustomerIDString = Console.ReadLine();
-                    int CustomerID = Convert.ToInt32(CustomerIDString);
+                    //Console.WriteLine("Indtast CustomerID: ");
+                    //string CustomerIDString = Console.ReadLine();
+                    //int CustomerID = Convert.ToInt32(CustomerIDString);
 
 
                     con.Open();
 
                     SqlCommand cmd2 = new SqlCommand("GetCustomerByCustomerID", con);
                     cmd2.CommandType = CommandType.StoredProcedure;
-                    cmd2.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
+                    cmd2.Parameters.Add(new SqlParameter("@CustomerID", customerID));
 
 
                     SqlDataReader reader = cmd2.ExecuteReader();
@@ -75,24 +75,27 @@ namespace ApplicationLayer
                             string Customer_Town = reader["Customer_Town"].ToString();
                             string Customer_Telephone = reader["Customer_Telephone"].ToString();
 
-                            Console.WriteLine(Customer_ID + " " + Customer_Name + " " + Customer_Adress + " " + customer_Zip + " "+ Customer_Town + " " + Customer_Telephone);
-                            Console.ReadLine();
+                            customerString = (Customer_ID + " " + Customer_Name + " " + Customer_Adress + " " + customer_Zip + " "+ Customer_Town + " " + Customer_Telephone);
+                           
                         }
+                        
                     }
                 }
+                    
                 catch (SqlException e)
                 
                 {
                     Console.WriteLine("Error: " + e.Message);
-                    Console.ReadLine();
+                    
                 }
 
             
             }
+            return customerString;
 
         }
 
 	}
 }
-		
+
 
