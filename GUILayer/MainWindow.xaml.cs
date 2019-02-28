@@ -46,5 +46,40 @@ namespace GUILayer
 
         }
 
+        private void Txt_CustomerName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Clear_Click(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void Txt_CustomerAddress_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Txt_CustomerZip_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void Txt_CustomerTown_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void Txt_CustomerTelefon_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
+
+        private void Txt_CustomerID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }
