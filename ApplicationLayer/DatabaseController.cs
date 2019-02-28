@@ -100,7 +100,7 @@ namespace ApplicationLayer
         }
 
 
-        public void CreateOrder()
+        public void CreateOrder(int ordre)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -108,7 +108,7 @@ namespace ApplicationLayer
                 {
                     con.Open();
 
-                    SqlCommand cmd3 = new SqlCommand("OPRET_ORDER");
+                    SqlCommand cmd3 = new SqlCommand("CreateOrder");
                     cmd3.CommandType = CommandType.StoredProcedure;
 
                     cmd3.Parameters.Add(new SqlParameter(@"Order_OrderID", order.OrderID));
@@ -121,7 +121,7 @@ namespace ApplicationLayer
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine("OPRET_KUNDE FEJL" + " " + e.Message);
+                    Console.WriteLine("OPRET_ORDRE FEJL" + " " + e.Message);
                 }
 
             }
