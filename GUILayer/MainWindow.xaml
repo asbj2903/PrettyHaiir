@@ -11,7 +11,7 @@
             <ColumnDefinition Width="48*"/>
             <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="Button_FindCustomer" Content="Find Kunde" HorizontalAlignment="Left" Margin="392,193,0,0" VerticalAlignment="Top" Width="74" Click="Button_FindCustomer_Click" RenderTransformOrigin="0.851,0.425"/>
+        <Button x:Name="Button_FindCustomer" Content="Find Kunde" HorizontalAlignment="Left" Margin="392,193,0,0" VerticalAlignment="Top" Width="74" Click="Button_FindCustomer_Click"/>
         <Button x:Name="Button_OpretKunde" Content="Opret Kunde" HorizontalAlignment="Left" Margin="37,158,0,0" VerticalAlignment="Top" Width="74" Click="Button_OpretKunde_Click"/>
         <Label x:Name="Label_CustomerName" Content="Indsæt navn" HorizontalAlignment="Left" Margin="36,226,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Label_CustomerAddress" Content="Indsæt Addresse" HorizontalAlignment="Left" Margin="37,257,0,0" VerticalAlignment="Top"/>
@@ -26,10 +26,10 @@
         <TextBox x:Name="Txt_CustomerTelefon" HorizontalAlignment="Left" Height="23" Margin="176,350,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Txt_FindCustomer" HorizontalAlignment="Left" Height="23" Margin="392,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.233,0.761"/>
         <Label x:Name="Label_CustomerID" Content="Indsæt CustomerID" HorizontalAlignment="Left" Margin="392,218,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Button_DeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="501,193,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button x:Name="Button_DeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="501,193,0,0" VerticalAlignment="Top" Width="94" Click="Button_DeleteCustomer_Click"/>
         <Button x:Name="Button_Clear" Content="Clear" HorizontalAlignment="Left" Margin="176,158,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.52,0" Click="Button_Clear_Click"/>
         <TextBox x:Name="ViewCustomerBox" HorizontalAlignment="Left" Height="74" Margin="392,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183" IsEnabled="False"/>
-        <Button Content="Opret Ordre" Grid.Column="1" HorizontalAlignment="Left" Margin="10.2,193,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button  x:Name="Button_Opret_Ordre" Content="Opret Ordre" Grid.Column="1" HorizontalAlignment="Left" Margin="10.2,193,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">

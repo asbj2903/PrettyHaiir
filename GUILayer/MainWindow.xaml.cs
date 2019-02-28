@@ -81,5 +81,16 @@ namespace GUILayer
 
         }
 
-    }
+		private void Button_DeleteCustomer_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			OpretOrdre opretOrdre = new OpretOrdre();
+
+			opretOrdre.Show();
+		}
+	}
 }
