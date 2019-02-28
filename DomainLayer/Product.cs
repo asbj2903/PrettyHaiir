@@ -8,77 +8,35 @@ namespace DomainLayer
 {
 	public class Product
 	{
-		private string name;
-		public string Name
+		
+		public string Product_Name
 		{
-			get
-			{
-				return name;
-			}
-			set
-			{
-				name = value;
-			}
+            get; set;
 		}
 
-		private string manufacturer;
-		public string Manufacturer
+		public string Product_Manufacturer
 		{
-			get
-			{
-				return manufacturer;
-			}
-			set
-			{
-                manufacturer = value;
-			}
+            get; set;
 		}
 
-		private string desciption;
-		public string Description
-		{
-			get
-			{
-				return desciption;
-			}
-			set
-			{
-				 desciption=value ;
-			}
+		public string Product_Description
+        {
+            get; set;
 		}
-
-		private double price;
-		public double Price
-		{
-			get
-			{
-				return price;
-			}
-			set
-			{
-				 price = value;
-			}
+		
+		public double Product_Price
+        {
+            get; set;
 		}
-
-		private int minStock;
-		public int MinStock
-		{
-			get
-			{
-				return minStock;
-			}
-			set
-			{
-                minStock= value;
-			}
-
-		}
-
-		private int quantity;
-		public int Quantity
-		{
-			get { return quantity; }
-			set { quantity = value; }
+		
+		public int Product_MinStock
+        {
+            get; set;
+    	}
+		
+		public int Product_Quantity
+        {
+            get; set;
 		}
 	}
 }
