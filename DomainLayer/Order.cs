@@ -8,28 +8,41 @@ namespace DomainLayer
 {
 	public class Order
 	{
-		private DateTime orderDate;
-		public DateTime Orderdate
+        private int orderID;
+        public int OrderID
+        {
+            get { return orderID; }
+            set { orderID = value; }
+        }
+
+		private DateTime order_Date;
+        public DateTime Order_Date
 		{
-			get { return orderDate; }
-			set { orderDate = value; }
+			get { return order_Date; }
+			set { order_Date = value; }
 		}
 
-		private DateTime deliveryDate;
+		private DateTime order_DeliveryDate;
 
-		public DateTime DeliveryDate
+		public DateTime Order_DeliveryDate
 		{
-			get { return deliveryDate; }
-			set { deliveryDate = value; }
+			get { return order_DeliveryDate; }
+			set { order_DeliveryDate = value; }
 		}
 
-		private bool picked;
+		private int order_Picked;
 
-		public bool Picked
+		public int Order_Picked
 		{
-			get { return picked; }
-			set {  picked = value; }
+			get { return order_Picked; }
+			set { order_Picked = value; }
 		}
+
+        private int order_CustomerID;
+        public int Order_CustomerID
+        {
+            get; set;
+        }
 
 	}
 }

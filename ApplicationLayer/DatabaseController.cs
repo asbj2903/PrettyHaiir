@@ -9,42 +9,46 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer
 {
-	public class DatabaseController
-	{
+    public class DatabaseController
+    {
         private string customerString;
         private static readonly string connectionString =
-		  "Server = ealSQL1.eal.local; Database = A_DB06_2018; User Id = A_STUDENT06; Password = A_OPENDB06;";
-        
-		public void OPRET_KUNDE(Customer customer)
-		{
-			using (System.Data.SqlClient.SqlConnection con = new SqlConnection(connectionString))
-			{
-				try
-				{
-					con.Open();
+          "Server = ealSQL1.eal.local; Database = A_DB06_2018; User Id = A_STUDENT06; Password = A_OPENDB06;";
 
-					SqlCommand cmd1 = new SqlCommand("OPRET_KUNDE", con);
-					cmd1.CommandType = CommandType.StoredProcedure;
+        Order order = new Order();
+        Customer customer = new Customer();
 
-					
-					cmd1.Parameters.Add(new SqlParameter("Customer_Name", customer.Customer_Name));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Address", customer.Customer_Address));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Zip", customer.Customer_Zip));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Town", customer.Customer_Town));
-					cmd1.Parameters.Add(new SqlParameter("@Customer_Telephone", customer.Customer_PhoneNumber));
 
-					cmd1.ExecuteNonQuery();
-				}
-				catch (SqlException e)
-				{
-					Console.WriteLine("OPRET_KUNDE FEJL" +" " + e.Message);
-				}
-                
-			}
-		}
+        public void OPRET_KUNDE(Customer customer)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
 
-         public string FindCustomerByCustomerID(int customerID)
-         {
+                    SqlCommand cmd1 = new SqlCommand("OPRET_KUNDE", con);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+
+
+                    cmd1.Parameters.Add(new SqlParameter("Customer_Name", customer.Customer_Name));
+                    cmd1.Parameters.Add(new SqlParameter("@Customer_Address", customer.Customer_Address));
+                    cmd1.Parameters.Add(new SqlParameter("@Customer_Zip", customer.Customer_Zip));
+                    cmd1.Parameters.Add(new SqlParameter("@Customer_Town", customer.Customer_Town));
+                    cmd1.Parameters.Add(new SqlParameter("@Customer_Telephone", customer.Customer_PhoneNumber));
+
+                    cmd1.ExecuteNonQuery();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("OPRET_KUNDE FEJL" + " " + e.Message);
+                }
+
+            }
+        }
+
+        public string FindCustomerByCustomerID(int customerID)
+        {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
@@ -75,27 +79,57 @@ namespace ApplicationLayer
                             string Customer_Town = reader["Customer_Town"].ToString();
                             string Customer_Telephone = reader["Customer_Telephone"].ToString();
 
-                            customerString = (Customer_ID + " " + Customer_Name + " " + Customer_Adress + " " + customer_Zip + " "+ Customer_Town + " " + Customer_Telephone);
-                           
+                            customerString = (Customer_ID + " " + Customer_Name + " " + Customer_Adress + " " + customer_Zip + " " + Customer_Town + " " + Customer_Telephone);
+
                         }
-                        
+
                     }
                 }
-                    
+
                 catch (SqlException e)
-                
+
                 {
                     Console.WriteLine("Error: " + e.Message);
-                    
+
                 }
 
-            
+
             }
             return customerString;
 
         }
 
-	}
+
+        public void CreateOrder(Order order)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd3 = new SqlCommand("CreateOrder", con);
+                    cmd3.CommandType = CommandType.StoredProcedure;
+
+                    
+                    cmd3.Parameters.Add(new SqlParameter("@Order_Date", order.Order_Date));
+                    cmd3.Parameters.Add(new SqlParameter("@Order_DeliveryDate", order.Order_DeliveryDate));
+                    cmd3.Parameters.Add(new SqlParameter("@Order_Picked", order.Order_Picked));
+                    cmd3.Parameters.Add(new SqlParameter("@CustomerID", order.Order_CustomerID));
+
+                    cmd3.ExecuteNonQuery();
+                    
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("OPRET_ORDRE FEJL" + " " + e.Message);
+                }
+
+            }
+        }
+
+    }
 }
+
 
 

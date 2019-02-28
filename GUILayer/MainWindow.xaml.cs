@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ApplicationLayer;
-using DomainLayer;
+
 
 
 namespace GUILayer
@@ -36,16 +36,6 @@ namespace GUILayer
 
         private void Button_OpretKunde_Click(object sender, RoutedEventArgs e)
         {
-            //CustomerRepository customerRepository = new CustomerRepository();
-
-            //int ct_id = Convert.ToInt32(Txt_CustomerID.Text);
-            //string ct_name = Txt_CustomerName.Text;
-            //string ct_address = Txt_CustomerAddress.Text;
-            //int ct_zip = Convert.ToInt32(Txt_CustomerZip.Text);
-            //string ct_Town = Txt_CustomerTown.Text;
-            //int ct_Telephone = Convert.ToInt32(Txt_CustomerTelefon.Text);
-
-            //customerRepository.AddCustomer(ct_id,ct_name,ct_address,ct_zip,ct_Town,ct_Telephone);
 
             controller.CreateCustomer(Txt_CustomerName.Text, Txt_CustomerAddress.Text, Convert.ToInt32(Txt_CustomerZip.Text), Txt_CustomerTown.Text, Convert.ToInt32(Txt_CustomerTelefon.Text));
 
