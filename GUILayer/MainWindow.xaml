@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="Button_FindCustomer" Content="Find Kunde" HorizontalAlignment="Left" Margin="392,193,0,0" VerticalAlignment="Top" Width="74" Click="Button_FindCustomer_Click" RenderTransformOrigin="0.851,0.425"/>
         <Button x:Name="Button_OpretKunde" Content="Opret Kunde" HorizontalAlignment="Left" Margin="37,158,0,0" VerticalAlignment="Top" Width="74" Click="Button_OpretKunde_Click"/>
         <Label x:Name="Label_CustomerName" Content="Indsæt navn" HorizontalAlignment="Left" Margin="36,226,0,0" VerticalAlignment="Top"/>
@@ -25,6 +29,13 @@
         <Button x:Name="Button_DeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="501,193,0,0" VerticalAlignment="Top" Width="94"/>
         <Button x:Name="Button_Clear" Content="Clear" HorizontalAlignment="Left" Margin="176,158,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.52,0" Click="Button_Clear_Click"/>
         <TextBox x:Name="ViewCustomerBox" HorizontalAlignment="Left" Height="74" Margin="392,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183" IsEnabled="False"/>
+        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="DodgerBlue" Offset="1"/>
+                <GradientStop Color="#FF4"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
     </Grid>
 </Window>
