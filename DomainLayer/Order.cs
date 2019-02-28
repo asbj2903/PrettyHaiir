@@ -30,13 +30,19 @@ namespace DomainLayer
 			set { order_DeliveryDate = value; }
 		}
 
-		private bool order_Picked;
+		private int order_Picked;
 
-		public bool Picked
+		public int Order_Picked
 		{
 			get { return order_Picked; }
 			set { order_Picked = value; }
 		}
+
+        private int order_CustomerID;
+        public int Order_CustomerID
+        {
+            get; set;
+        }
 
 	}
 }

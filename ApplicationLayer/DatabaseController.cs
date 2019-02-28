@@ -100,7 +100,7 @@ namespace ApplicationLayer
         }
 
 
-        public void CreateOrder(int ordre)
+        public void CreateOrder(Order order)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -108,16 +108,17 @@ namespace ApplicationLayer
                 {
                     con.Open();
 
-                    SqlCommand cmd3 = new SqlCommand("CreateOrder");
+                    SqlCommand cmd3 = new SqlCommand("CreateOrder", con);
                     cmd3.CommandType = CommandType.StoredProcedure;
 
-                    cmd3.Parameters.Add(new SqlParameter(@"Order_OrderID", order.OrderID));
+                    
                     cmd3.Parameters.Add(new SqlParameter("@Order_Date", order.Order_Date));
                     cmd3.Parameters.Add(new SqlParameter("@Order_DeliveryDate", order.Order_DeliveryDate));
-                    cmd3.Parameters.Add(new SqlParameter("@Order_Picked", order.Picked));
-                    cmd3.Parameters.Add(new SqlParameter("@CustomerID", customer.CustomerID));
+                    cmd3.Parameters.Add(new SqlParameter("@Order_Picked", order.Order_Picked));
+                    cmd3.Parameters.Add(new SqlParameter("@CustomerID", order.Order_CustomerID));
 
                     cmd3.ExecuteNonQuery();
+                    
                 }
                 catch (SqlException e)
                 {
