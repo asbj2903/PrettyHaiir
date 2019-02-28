@@ -11,14 +11,17 @@ namespace ApplicationLayer
 {
     public class DatabaseController
     {
-        private string customerString;
-        private static readonly string connectionString =
-          "Server = ealSQL1.eal.local; Database = A_DB06_2018; User Id = A_STUDENT06; Password = A_OPENDB06;";
 
         Order order = new Order();
         Customer customer = new Customer();
 
+        private string customerString;
 
+        private static readonly string connectionString =
+          "Server = ealSQL1.eal.local; Database = A_DB06_2018; User Id = A_STUDENT06; Password = A_OPENDB06;";
+
+        
+        //-------------------------------------------------------- Create Order ----------------------------------------//
         public void OPRET_KUNDE(Customer customer)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -47,16 +50,14 @@ namespace ApplicationLayer
             }
         }
 
+        //------------------------------------------------------ Find kunde ----------------------------------------------//
+
         public string FindCustomerByCustomerID(int customerID)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
                 {
-                    //Console.WriteLine("Indtast CustomerID: ");
-                    //string CustomerIDString = Console.ReadLine();
-                    //int CustomerID = Convert.ToInt32(CustomerIDString);
-
 
                     con.Open();
 
@@ -90,16 +91,12 @@ namespace ApplicationLayer
 
                 {
                     Console.WriteLine("Error: " + e.Message);
-
                 }
-
-
             }
             return customerString;
-
         }
 
-
+        //------------------------------------------------------------- Opret Order ---------------------------------------------//
         public void CreateOrder(Order order)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -124,10 +121,8 @@ namespace ApplicationLayer
                 {
                     Console.WriteLine("OPRET_ORDRE FEJL" + " " + e.Message);
                 }
-
             }
         }
-
     }
 }
 

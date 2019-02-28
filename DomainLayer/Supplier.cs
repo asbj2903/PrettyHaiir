@@ -8,39 +8,34 @@ namespace DomainLayer
 {
 	public class Supplier
 	{
-		private string name;
-		public string Name
+		
+		public string Supplier_Name
 		{
-			get { return name; }
-			set { name = value; }
+            get; set;
 		}
 
-		private string address;
-		public string Address
-		{
-			get { return address; }
-			set { address = value; }
+		
+		public string Supplier_Address
+        {
+            get; set;
 		}
 
-		private int zip;
-		public int Zip
-		{
-			get { return zip; }
-			set { zip = value; }
+
+		public int Supplier_Zip
+        {
+            get; set;
 		}
 
-		private string town;
-		public string Town
-		{
-			get { return town; }
-			set { town = value; }
+		
+		public string Supplier_Town
+        {
+            get; set;
 		}
 
-		private int phoneNumber;
-		public int PhoneNumber
-		{
-			get { return phoneNumber; }
-			set { phoneNumber = value; }
+		
+		public int Supplier_PhoneNumber
+        {
+            get; set;
 		}
 	}
 }

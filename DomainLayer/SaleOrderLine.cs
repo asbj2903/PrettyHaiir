@@ -8,18 +8,15 @@ namespace DomainLayer
 {
 	public class SaleOrderLine
 	{
-		private int quantity;//ssdfsdf
-		public int Quantity
+		
+		public int SaleOrderLine_Quantity
 		{
-			get { return quantity; }
-			set { quantity = value; }
+            get; set;
 		}
 
-		private double price;
-		public double Price
-		{
-			get { return price; }
-			set { price = value; }
+		public double SaleOrderLine_Price
+        {
+            get; set;
 		}
 	}
 }

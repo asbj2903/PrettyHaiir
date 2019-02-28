@@ -36,49 +36,13 @@ namespace GUILayer
 
         private void Button_OpretKunde_Click(object sender, RoutedEventArgs e)
         {
-
-            controller.CreateCustomer(Txt_CustomerName.Text, Txt_CustomerAddress.Text, Convert.ToInt32(Txt_CustomerZip.Text), Txt_CustomerTown.Text, Convert.ToInt32(Txt_CustomerTelefon.Text));
-
             Txt_CustomerName.Text = null;
             Txt_CustomerAddress.Text = null;
             Txt_CustomerZip.Text = null;
             Txt_CustomerTown.Text = null;
             Txt_CustomerTelefon.Text = null;
 
-        }
-
-        private void Txt_CustomerName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Clear_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
-
-        private void Txt_CustomerAddress_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Txt_CustomerZip_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
-
-        private void Txt_CustomerTown_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //Txt_CustomerTown.IsEnabled = false;
-        }
-
-        private void Txt_CustomerTelefon_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //Txt_CustomerTelefon.IsEnabled = false;
-        }
-
-        private void Txt_CustomerID_TextChanged(object sender, TextChangedEventArgs e)
-        {
+            controller.CreateCustomer(Txt_CustomerName.Text, Txt_CustomerAddress.Text, Convert.ToInt32(Txt_CustomerZip.Text), Txt_CustomerTown.Text, Convert.ToInt32(Txt_CustomerTelefon.Text));
 
         }
 

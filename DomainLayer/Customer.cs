@@ -46,7 +46,6 @@ namespace DomainLayer
 
 		private int customer_PhoneNumber;
 
-
 		public int Customer_PhoneNumber
         {
 			get { return customer_PhoneNumber; }
